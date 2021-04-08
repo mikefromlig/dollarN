@@ -1,5 +1,5 @@
 # dollarN
-**Python implementation of $N, the 2D multistrokes recognizer** 
+**_Python implementation of $N, the 2D multistrokes recognizer_** 
 
 http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 
@@ -14,10 +14,11 @@ http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 > Protractor, optional here, improves $N's speed. 
 
 ## Features
-- Needs numpy
+- [Numpy](https://numpy.org/)
 
 ## Example of use (simple.py):
-```from dollarN import dollarN
+```
+from dollarN import dollarN
 
 dN = dollarN()
 
@@ -29,9 +30,8 @@ dN.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,0.], [2.5,5.]]    ])
 test = [[[0, 5.2], [5.,5.]], [[2.5, 0.], [2.5,5.]]]
 print( dN.recognize(test) )
 ```
-Console result:
 ```
 {'name': 'T', 'value': 0.9484976300936439, 'time': 0.006083965301513672}
 ```
-
-A demo is available with tkDollarN.py.
+## Demo
+A demo is available with tkDollarN.py
