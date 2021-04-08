@@ -14,6 +14,7 @@ http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 > Protractor, optional here, improves $N's speed. 
 
 ## Features
+- [Python 3](https://www.python.org/)
 - [Numpy](https://numpy.org/)
 
 ## Example of use (simple.py):
