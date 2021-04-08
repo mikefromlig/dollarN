@@ -19,7 +19,7 @@ http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 
 ## Example of use (simple.py):
 ```
-from dollarN import dollarN
+from dollarN import *
 
 dN = dollarN()
 
