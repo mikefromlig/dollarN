@@ -19,17 +19,17 @@ http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 
 ## Example of use (simple.py):
 ```
-from dollarN import *
+import dollarN as dN
 
-dN = dollarN()
+r = dN.recognizer()
 
 #Adding gestures: multistrokes with names
-dN.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]      ])
-dN.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,0.], [2.5,5.]]    ])
+r.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]      ])
+r.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,0.], [2.5,5.]]    ])
 
 #Launching a recognition
 test = [[[0, 5.2], [5.,5.]], [[2.5, 0.], [2.5,5.]]]
-print( dN.recognize(test) )
+print( r.recognize(test) )
 ```
 ```
 {'name': 'T', 'value': 0.9484976300936439, 'time': 0.006083965301513672}
