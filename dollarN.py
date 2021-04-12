@@ -258,7 +258,7 @@ class multistroke():
         for u in unistrokes:
             self.unistrokes.append(unistroke(name, rotation_invariance, u))
 
-class dollarN():
+class recognizer():
     def __init__(self):
         self.rotation_invariance = True
         self.same_nb_strokes = True

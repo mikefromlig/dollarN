@@ -4,12 +4,12 @@
 
 import os
 import numpy as np
-from dollarN import dollarN
+import dollarN as dN
 import tkinter as tk
 
 #_______________________________________________________________________________
 #Globals
-dN              = dollarN()
+dNr              = dN.recognizer()
 m_window        = tk.Tk()
 m_canvas        = None
 result_txt      = None
@@ -19,21 +19,21 @@ cb_var_2        = tk.IntVar()
 
 #_______________________________________________________________________________
 #$N management
-dN.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]      ])
-dN.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,5.], [2.5,0.]]    ])
-dN.add_gesture('U', [   [[0.,5.], [0.,0.], [5.,0.], [5.,5.]]        ])
+dNr.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]      ])
+dNr.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,5.], [2.5,0.]]    ])
+dNr.add_gesture('U', [   [[0.,5.], [0.,0.], [5.,0.], [5.,5.]]        ])
 
 def recognize():
     if len(drawn_strokes):
-        res = dN.recognize(drawn_strokes)
+        res = dNr.recognize(drawn_strokes)
         txt = res['name']+' ('+str(res['value'])+')'
         result_txt.configure(text=txt)
 
 #_______________________________________________________________________________
 #Tkinter management
 def c_boxes():
-    dN.set_rotation_invariance(cb_var_1.get())
-    dN.set_same_nb_strokes(cb_var_2.get())
+    dNr.set_rotation_invariance(cb_var_1.get())
+    dNr.set_same_nb_strokes(cb_var_2.get())
 
 def drawing(event):
     h = m_canvas.winfo_height()
@@ -82,8 +82,8 @@ m_canvas.bind("<B1-Motion>", drawing)
 
 cb1.pack(side=tk.LEFT)
 cb2.pack(side=tk.RIGHT)
-if dN.get_rotation_invariance():    cb1.select()
-if dN.get_same_nb_strokes():        cb2.select()
+if dNr.get_rotation_invariance():    cb1.select()
+if dNr.get_same_nb_strokes():        cb2.select()
 
 frame_bt = tk.Frame(m_window, borderwidth=2, relief=tk.FLAT)
 frame_bt.pack()
