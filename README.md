@@ -22,7 +22,7 @@ http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 import dollarN as dN
 
 r = dN.recognizer()
-#By default, a recognizer gives a positive result when gestures have 
+#By default, a recognizer gives a candidate when gestures have
 #the same number of strokes only. This can be turned off:
 #r.set_same_nb_strokes(False)
 
@@ -30,8 +30,9 @@ r = dN.recognizer()
 #r.set_rotation_invariance(False)
 
 #Adding gestures: multistrokes with names
-r.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]      ])
-r.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,0.], [2.5,5.]]    ])
+r.add_gesture('U', [   [[0.,5.], [0.,0.], [5.,0.], [5.,5.]]    ]) # one stroke
+r.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]  ]) # two strokes
+r.add_gesture('T', [   [[0.,5.], [5.,5.]], [[2.5,0.], [2.5,5.]]]) # two strokes
 
 #Launching a recognition
 test = [[[0, 5.2], [5.,5.]], [[2.5, 0.], [2.5,5.]]]
