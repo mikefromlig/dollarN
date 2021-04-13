@@ -22,6 +22,12 @@ http://depts.washington.edu/acelab/proj/dollar/ndollar.html
 import dollarN as dN
 
 r = dN.recognizer()
+#By default, a recognizer gives a positive result when gestures have 
+#the same number of strokes only. This can be turned off:
+#r.set_same_nb_strokes(False)
+
+#Rotation invariance can also be turned off:
+#r.set_rotation_invariance(False)
 
 #Adding gestures: multistrokes with names
 r.add_gesture('X', [   [[0.,0.], [5.,5.]], [[0.,5.], [5.,0.]]      ])
