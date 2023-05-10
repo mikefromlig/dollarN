@@ -177,7 +177,7 @@ def optimal_cos_distance(v1, v2):
     a, b = 0.0, 0.0
     for _i in range(int(len(v1)/2)):
         i = _i*2
-        if i+1 < len(v1):
+        if i+1 < len(v1) and i+1 < len(v2):
             a += v1[i]*v2[i] + v1[i+1]*v2[i+1]
             b += v1[i]*v2[i+1] - v1[i+1]*v2[i]
     angle = math.atan(b / a)
